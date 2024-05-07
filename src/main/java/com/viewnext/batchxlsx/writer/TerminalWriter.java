@@ -25,6 +25,7 @@ public class TerminalWriter {
 		return new FlatFileItemWriterBuilder<Terminal>().name("terminalItemWriter")
 				.resource(new PathResource("src/main/resources/data/local/terminales.csv")).delimited()
 				.names("id", "name", "description", "code")
+				.headerCallback(new TerminalHeaderWriter("id,name,description,code"))
 				.build();
 	}
 }
