@@ -11,6 +11,9 @@ import org.springframework.stereotype.Component;
 
 import com.viewnext.batchxlsx.model.Terminal;
 
+/**
+ * Clase que se encarga de los distintos writers del batch
+ */
 @Configuration
 @Component
 public class TerminalWriter {
@@ -18,7 +21,7 @@ public class TerminalWriter {
 	/**
 	 * El writer para escribir en el csv
 	 * 
-	 * @return El writer que escribirá en el csv
+	 * @return FlatFileItemWriter<Terminal> que escribirá en el csv
 	 */
 	@Bean(value = "writerLocal")
 	public FlatFileItemWriter<Terminal> writerLocal() {

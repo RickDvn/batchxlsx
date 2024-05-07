@@ -24,7 +24,7 @@ public class JobCompletionNotificationListener implements JobExecutionListener {
 	}
 
 	/**
-	 * Realiza unlog de los Stock de la base de datos cuando se completa exitosamente el Job
+	 * Realiza un log cuando se completa exitosamente el Job
 	 */
 	@Override
 	public void afterJob(JobExecution jobExecution) {

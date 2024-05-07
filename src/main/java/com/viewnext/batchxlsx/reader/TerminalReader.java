@@ -23,6 +23,9 @@ import org.springframework.stereotype.Component;
 
 import com.viewnext.batchxlsx.model.Terminal;
 
+/**
+ * Clase que se encarga de los distintos readers del batch
+ */
 @Configuration
 @Component
 public class TerminalReader {
@@ -31,6 +34,12 @@ public class TerminalReader {
 	
 	private static final String urlExcel = "src/main/resources/data/local/terminales.xlsx";
 	
+	/**
+	 * Reader para el archivo excel
+	 * 
+	 * @return ItemReader<Terminal>, el item reader listo para ser procesado
+	 * @throws IOException, fallo con el archivo excel a leer
+	 */
 	@Bean
 	public ItemReader<Terminal> readerTerminalLocal() throws IOException{
 		return new ItemReader<Terminal>() {
@@ -48,6 +57,13 @@ public class TerminalReader {
 		};
 	}
 	
+	
+	/**
+	 * El método que lee el archivo excel
+	 * 
+	 * @return ArrayList<Terminal>, los objetos Terminal del excel
+	 * @throws IOException, fallo con el archivo excel a leer
+	 */
 	private ArrayList<Terminal> readExcelFile() throws IOException{
 		
 		
